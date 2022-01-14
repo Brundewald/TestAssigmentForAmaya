@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: baba2f5fd2b315f40a444593675fc585
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _tabletBackhround: {instanceID: 0}
+  - _tabletImage: {instanceID: 0}
+  - _sprite: {fileID: 2821206469476273005, guid: fc670bb115ee9a646991db2741b85a96,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

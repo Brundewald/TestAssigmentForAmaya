@@ -1,0 +1,124 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ObjectSprites
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 2
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 2
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 78c5abb2a28b914429a5f76440bab4bd, type: 3}
+    - {fileID: 102900000, guid: 6fb4276106f66334aa15da1fa81fc69d, type: 3}
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: f25ca300f67c0f34bb11de3e7ad813fc, type: 3}
+  - {fileID: 21300000, guid: 2434fe2067376b046a46eac86bad8466, type: 3}
+  - {fileID: 21300000, guid: c29cf34052697694e9a2a67e9f4b96c0, type: 3}
+  - {fileID: 21300000, guid: d9c453912f84bdc498076e60b43dadc7, type: 3}
+  - {fileID: 21300000, guid: a42af5f173d50d647a4f66f23e140eed, type: 3}
+  - {fileID: 21300000, guid: fd68f272da819aa43a95e56cecfd39ed, type: 3}
+  - {fileID: 21300000, guid: 9ed157a222f30fe46a55c5da14143f09, type: 3}
+  - {fileID: 21300000, guid: c4d570b2678ec554aa5f82f72f617797, type: 3}
+  - {fileID: 21300000, guid: 1ea17f5382dd6af429b400b278dad633, type: 3}
+  - {fileID: 21300000, guid: f66cd70443b0dd146a4d982930f44f6f, type: 3}
+  - {fileID: 21300000, guid: 22dd8864f9f804341857fe5296bb33e5, type: 3}
+  - {fileID: 21300000, guid: 37bfcb74facca33459f9b38f5bc68c8c, type: 3}
+  - {fileID: 21300000, guid: 554ad1b4efa8319409488096276018c9, type: 3}
+  - {fileID: 21300000, guid: 5ff463c4a0e983141b3444f2515999ec, type: 3}
+  - {fileID: 21300000, guid: e8c63ba57d695744cb41ddf28de724f9, type: 3}
+  - {fileID: 21300000, guid: 29959df5977251a40869edf48494b1f3, type: 3}
+  - {fileID: 21300000, guid: 37d4e6f6da2f05f4796f007c2f595e73, type: 3}
+  - {fileID: 21300000, guid: 72ea7df6acd79ef479ab195fb05e70ca, type: 3}
+  - {fileID: 21300000, guid: cf473017b44e2704190dbd94676bead1, type: 3}
+  - {fileID: 21300000, guid: f2ac1ca712786cf4789faf1de8b17d9d, type: 3}
+  - {fileID: 21300000, guid: 1fe760f7972f7084092053a4d2020a7a, type: 3}
+  - {fileID: 21300000, guid: 0bbf77a85418daf4d89876aab3a0974d, type: 3}
+  - {fileID: 21300000, guid: 6c31d8e880b63a8428a78ecb7bc213dd, type: 3}
+  - {fileID: 21300000, guid: f92feb794f2c0d34bbf1614bd9bf09a5, type: 3}
+  - {fileID: 21300000, guid: 11950c99457449845a6c558cfdf4eb42, type: 3}
+  - {fileID: 21300000, guid: 39fe8af9e140f4147b4f84295c970b15, type: 3}
+  - {fileID: 21300000, guid: 5557029bf7e4c704384876ac36b9bd0d, type: 3}
+  - {fileID: 21300000, guid: dc6408fbd1dfa2d4993e5e24cc2173ab, type: 3}
+  - {fileID: 21300000, guid: 1815794c48617b242b8b078fb479b2ab, type: 3}
+  - {fileID: 21300000, guid: c686158cbae873e4a927ab0b548788ee, type: 3}
+  - {fileID: 21300000, guid: bbb8449c114457443bbcf8c1a74acd1f, type: 3}
+  - {fileID: 21300000, guid: 2d6f401e80c167543a88a1ba7f7c4a3b, type: 3}
+  - {fileID: 21300000, guid: f881cd2e4bb3129458873b629a47e89b, type: 3}
+  - {fileID: 21300000, guid: 3c16f81f759cdf54fb57775a040886e9, type: 3}
+  - {fileID: 21300000, guid: fadbf23f8641dd74dab21d6def97ed18, type: 3}
+  - {fileID: 21300000, guid: 5fb6d73fde464ba4bb84ce1006562296, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - S
+  - F
+  - P
+  - D
+  - K
+  - C
+  - 2
+  - 4
+  - 7
+  - M
+  - O
+  - W
+  - G
+  - 3
+  - B
+  - Q
+  - 5
+  - T
+  - U
+  - 1
+  - A
+  - R
+  - 8
+  - N
+  - 6
+  - Y
+  - L
+  - I
+  - V
+  - H
+  - E
+  - 9
+  - J
+  - 10
+  - Z
+  - X
+  m_Tag: ObjectSprites
+  m_IsVariant: 0
