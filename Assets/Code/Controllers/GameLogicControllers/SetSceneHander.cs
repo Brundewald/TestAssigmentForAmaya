@@ -7,7 +7,10 @@ namespace TestProject
     public sealed class SetSceneHander
     {
         private const float InsertDelayForAppear = 0;
-        
+        private const int EasyLevel = 0;
+        private const int MediumLevel = 1;
+        private const int HardLevel = 2;
+
         private TabletStackHandler _tabletStackHandler;
         private TaskDisplayHandler _taskDisplayHandler;
         private GameStateHandler _gameStateHandler;
@@ -37,15 +40,15 @@ namespace TestProject
         
         internal void SetTablets(int currentState)
         {
-            if (currentState == 0)
+            if (currentState == EasyLevel)
             {
                 SetupScene(_taskData.EasyLevelStackCount);
             }
-            else if (currentState == 1)
+            else if (currentState == MediumLevel)
             {
                 SetupScene(_taskData.MediumLevelStackCount);
             }
-            else if (currentState == 2)
+            else if (currentState == HardLevel)
             {
                 SetupScene(_taskData.HardLevelStackCount);
             }

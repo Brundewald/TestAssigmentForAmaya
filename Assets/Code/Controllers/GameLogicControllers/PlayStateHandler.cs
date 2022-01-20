@@ -9,6 +9,7 @@
         private readonly CriteriaCheckHandler _criteriaCheckHandler;
         private readonly TabletStackHandler _tabletStackHandler;
         private readonly ParticalIntializer _particleSystem;
+        private readonly TouchEffectsHandler _touchEffectsHandler;
 
         public SetSceneHander SetSceneHander => _setSceneHander;
 
@@ -22,7 +23,9 @@
             _tabletsTouchHandler = new TabletsTouchHandler(_tabletStackHandler);
             _setSceneHander = new SetSceneHander(_tabletStackHandler, taskDisplayHandler, tweenAnimationHandler, gameStateHandler, gameData);
             _buttonHandler = new ButtonHandler(uiInitializeHandler, gameStateHandler);
-            _criteriaCheckHandler = new CriteriaCheckHandler(_setSceneHander, _tabletsTouchHandler, tweenAnimationHandler, _particleSystem);
+            _criteriaCheckHandler = new CriteriaCheckHandler(_setSceneHander, _tabletsTouchHandler);
+            _touchEffectsHandler = new TouchEffectsHandler(_setSceneHander, _criteriaCheckHandler,
+                tweenAnimationHandler, _particleSystem);
         }
 
         public void Initialize()
@@ -33,6 +36,7 @@
             _tabletsTouchHandler.Initialize();
             _buttonHandler.Initialize();
             _criteriaCheckHandler.Initialize();
+            _touchEffectsHandler.Initialize();
         }
 
         public void Cleanup()
@@ -40,6 +44,7 @@
             _tabletsTouchHandler.Cleanup();
             _buttonHandler.Cleanup();
             _criteriaCheckHandler.Cleanup();
+            _touchEffectsHandler.Cleanup();
         }
     }
 }

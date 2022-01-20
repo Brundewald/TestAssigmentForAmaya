@@ -11,7 +11,7 @@
             TweenAnimationHandler tweenAnimationHandler)
         {
             _playStateHandler = new PlayStateHandler(uiInitializeHandler, tweenAnimationHandler, this, gameData);
-            _playScreenHandler = new PlayScreenHandler(uiInitializeHandler, tweenAnimationHandler, _playStateHandler);
+            _playScreenHandler = new PlayScreenHandler(uiInitializeHandler, _playStateHandler);
             _resetScreenHandler = new ResetScreenHandler(gameData, uiInitializeHandler);
             _reloadScreenHandler = new ReloadScreenHandler(tweenAnimationHandler, uiInitializeHandler, this);
         }
