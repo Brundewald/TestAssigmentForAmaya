@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace TestProject
 {
-    public class ReloadScreenHandler
+    public sealed class ReloadScreenHandler
     {
         private readonly TweenAnimationHandler _tweenAnimationHandler;
         private readonly GameStateHandler _gameStateHandler;

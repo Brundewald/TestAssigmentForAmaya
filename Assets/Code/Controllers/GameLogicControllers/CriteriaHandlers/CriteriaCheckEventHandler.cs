@@ -1,34 +1,35 @@
-﻿using DG.Tweening;
+﻿using System;
+using DG.Tweening;
 using UnityEngine;
 
 namespace TestProject
 {
-    public sealed class TouchEffectsHandler: IInitialization, ICleanup
+    public sealed class CriteriaCheckEventHandler: IInitialization, ICleanup
     {
-        private readonly SetSceneHander _setSceneHander;
         private readonly CriteriaCheckHandler _criteriaCheckHandler;
         private readonly TweenAnimationHandler _tweenAnimationHandler;
-        private readonly ParticalIntializer _particalSystem;
+        private readonly ParticleIntializer _particleSystem;
+
+        public event Action OnRightAnswer;
         
-        public TouchEffectsHandler(SetSceneHander setSceneHander, CriteriaCheckHandler criteriaCheckHandler,
-            TweenAnimationHandler tweenAnimationHandler, ParticalIntializer particalIntializer)
+        public CriteriaCheckEventHandler(CriteriaCheckHandler criteriaCheckHandler,
+            TweenAnimationHandler tweenAnimationHandler, ParticleIntializer particleIntializer)
         {
-            _setSceneHander = setSceneHander;
             _criteriaCheckHandler = criteriaCheckHandler;
             _tweenAnimationHandler = tweenAnimationHandler;
-            _particalSystem = particalIntializer;
+            _particleSystem = particleIntializer;
         }
 
         public void Initialize()
         {
             _criteriaCheckHandler.OnCriteriaMatch += RightAnswerEffects;
-            _criteriaCheckHandler.OnCriteriaDismatch += WrongAnswerEffects;
+            _criteriaCheckHandler.OnCriteriaMismatch += WrongAnswerEffects;
         }
 
         public void Cleanup()
         {
             _criteriaCheckHandler.OnCriteriaMatch -= RightAnswerEffects;
-            _criteriaCheckHandler.OnCriteriaDismatch -= WrongAnswerEffects;
+            _criteriaCheckHandler.OnCriteriaMismatch -= WrongAnswerEffects;
         }
 
         private void RightAnswerEffects(Transform targetTransform)
@@ -36,19 +37,18 @@ namespace TestProject
             var sequence = DOTween.Sequence();
             sequence.AppendCallback(()=>
             {
-                _particalSystem.PlayParticleEffect(targetTransform);
+                _particleSystem.PlayParticleEffect(targetTransform);
             });
             sequence.Append(_tweenAnimationHandler.DoRightAnswerShake(targetTransform));
-            sequence.AppendCallback((() =>
+            sequence.AppendCallback(() =>
             {
-                _setSceneHander.MoveNext();
-            }));
+                OnRightAnswer?.Invoke();
+            });
         }
 
         private void WrongAnswerEffects(Transform targetTransform)
         {
             var sequence = DOTween.Sequence();
-
             sequence.Append(_tweenAnimationHandler.DoWrongAnswerShake(targetTransform));
         }
     }

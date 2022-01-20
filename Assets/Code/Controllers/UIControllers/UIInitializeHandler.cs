@@ -4,7 +4,7 @@ namespace TestProject
 {
     public sealed class UIInitializeHandler
     {
-        private GameObject _gameScreenPrefab;
+        private readonly GameObject _gameScreenPrefab;
         private GameScreenView _gameScreenView;
 
         public GameScreenView GameScreenView => _gameScreenView;

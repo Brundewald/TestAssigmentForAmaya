@@ -2,14 +2,14 @@
 
 namespace TestProject
 {
-    public sealed class ParticalIntializer
+    public sealed class ParticleIntializer
     {
         private readonly GameObject _particleSystemPrefab;
+        private readonly GameObject _gameScreen;
         private ParticleSystem _particleSystem;
         private GameObject _particleSystemGameObject;
-        private GameObject _gameScreen;
-        
-        public ParticalIntializer(GameData gameData, UIInitializeHandler uiInitializeHandler)
+
+        public ParticleIntializer(GameData gameData, UIInitializeHandler uiInitializeHandler)
         {
             _particleSystemPrefab = gameData.TaskData.ParticleSystem;
             _gameScreen = uiInitializeHandler.GameScreenView.gameObject;
@@ -28,7 +28,7 @@ namespace TestProject
         }
 
         internal void PlayParticleEffect(Transform transform)
-        { 
+        {
             _particleSystemGameObject.transform.position = transform.position;
             _particleSystem.Play();
         }

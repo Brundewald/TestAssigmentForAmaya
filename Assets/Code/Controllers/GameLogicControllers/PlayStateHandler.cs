@@ -4,39 +4,41 @@
     {
         private readonly GameStateHandler _gameStateHandler;
         private readonly TabletsTouchHandler _tabletsTouchHandler;
-        private readonly SetSceneHander _setSceneHander;
-        private readonly ButtonHandler _buttonHandler;
+        private readonly CriteriaCheckEventHandler _criteriaCheckEventHandler;
         private readonly CriteriaCheckHandler _criteriaCheckHandler;
-        private readonly TabletStackHandler _tabletStackHandler;
-        private readonly ParticalIntializer _particleSystem;
-        private readonly TouchEffectsHandler _touchEffectsHandler;
+        private readonly ButtonHandler _buttonHandler;
+        private readonly ParticleIntializer _particleSystem;
+        private readonly SetSceneHandler _setSceneHandler;
 
-        public SetSceneHander SetSceneHander => _setSceneHander;
+        public SetSceneHandler SetSceneHandler => _setSceneHandler;
 
         public PlayStateHandler(UIInitializeHandler uiInitializeHandler, TweenAnimationHandler tweenAnimationHandler,
             GameStateHandler gameStateHandler, GameData gameData)
         {
             var taskDisplayHandler = new TaskDisplayHandler(uiInitializeHandler, gameData);
-            _particleSystem = new ParticalIntializer(gameData, uiInitializeHandler);
+            var tabletStackHandler = new TabletStackHandler(gameData, uiInitializeHandler);
+            var tabletsOnScreenHandler = new TabletsOnScreenHandler(tabletStackHandler);
+            var criteriaSettingHandler = new CriteriaSettingHandler(tabletsOnScreenHandler, taskDisplayHandler);
+            var sceneManagementHandler = new SceneManagementHandler(tabletStackHandler, tabletsOnScreenHandler,
+                criteriaSettingHandler, tweenAnimationHandler, gameData);
             _gameStateHandler = gameStateHandler;
-            _tabletStackHandler = new TabletStackHandler(gameData, uiInitializeHandler);
-            _tabletsTouchHandler = new TabletsTouchHandler(_tabletStackHandler);
-            _setSceneHander = new SetSceneHander(_tabletStackHandler, taskDisplayHandler, tweenAnimationHandler, gameStateHandler, gameData);
+            _tabletsTouchHandler = new TabletsTouchHandler(tabletStackHandler);
+            _criteriaCheckHandler = new CriteriaCheckHandler(criteriaSettingHandler, _tabletsTouchHandler);
+            _particleSystem = new ParticleIntializer(gameData, uiInitializeHandler);
+            _criteriaCheckEventHandler = new CriteriaCheckEventHandler(_criteriaCheckHandler, tweenAnimationHandler, _particleSystem);
+            _setSceneHandler = new SetSceneHandler(_criteriaCheckEventHandler, sceneManagementHandler, gameStateHandler, gameData);
             _buttonHandler = new ButtonHandler(uiInitializeHandler, gameStateHandler);
-            _criteriaCheckHandler = new CriteriaCheckHandler(_setSceneHander, _tabletsTouchHandler);
-            _touchEffectsHandler = new TouchEffectsHandler(_setSceneHander, _criteriaCheckHandler,
-                tweenAnimationHandler, _particleSystem);
         }
 
         public void Initialize()
         {
-            _particleSystem.Initialize();
             _gameStateHandler.SwitchState(GameState.Play);
-            _tabletStackHandler.Initialize();
             _tabletsTouchHandler.Initialize();
             _buttonHandler.Initialize();
             _criteriaCheckHandler.Initialize();
-            _touchEffectsHandler.Initialize();
+            _setSceneHandler.Initialize();
+            _particleSystem.Initialize();
+            _criteriaCheckEventHandler.Initialize();
         }
 
         public void Cleanup()
@@ -44,7 +46,8 @@
             _tabletsTouchHandler.Cleanup();
             _buttonHandler.Cleanup();
             _criteriaCheckHandler.Cleanup();
-            _touchEffectsHandler.Cleanup();
+            _criteriaCheckEventHandler.Cleanup();
+            _setSceneHandler.Cleanup();
         }
     }
 }

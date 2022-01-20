@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace TestProject
 {
-    public class TabletsTouchHandler: IInitialization, ICleanup
+    public sealed class TabletsTouchHandler: IInitialization, ICleanup
     {
-        private TabletStackHandler _tabletStackHandler;
+        private readonly TabletStackHandler _tabletStackHandler;
         private readonly List<TabletView> _tabletView;
         private string _touchedTablet;
 
@@ -32,20 +31,20 @@ namespace TestProject
         private void AddSubscriptions()
         {
             _tabletStackHandler.OnStackReload += ReloadSubscriptions;
-            
-            for (int i = 0; i < _tabletView.Count; i++)
+
+            foreach (var view in _tabletView)
             {
-                _tabletView[i].OnTabletPressed += TabletPressed;
+                view.OnTabletPressed += TabletPressed;
             }
         }
 
         private void RemoveSubscription()
         {
             _tabletStackHandler.OnStackReload -= ReloadSubscriptions;
-            
-            for (int i = 0; i < _tabletView.Count; i++)
+
+            foreach (var view in _tabletView)
             {
-                _tabletView[i].OnTabletPressed -= TabletPressed;
+                view.OnTabletPressed -= TabletPressed;
             }
         }
 

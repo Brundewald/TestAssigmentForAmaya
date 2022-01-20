@@ -6,34 +6,33 @@ namespace TestProject
 {
     public sealed class CriteriaCheckHandler: IInitialization, ICleanup
     {
-        private readonly SetSceneHander _setSceneHander;
+        private readonly CriteriaSettingHandler _criteriaSettingHandler;
         private readonly TabletsTouchHandler _tabletsTouchHandler;
 
         public event Action<Transform> OnCriteriaMatch;
-        public event Action<Transform> OnCriteriaDismatch;
+        public event Action<Transform> OnCriteriaMismatch;
         
-        public CriteriaCheckHandler(SetSceneHander setSceneHander, TabletsTouchHandler tabletsTouchHandler)
+        public CriteriaCheckHandler(CriteriaSettingHandler criteriaSettingHandler, TabletsTouchHandler tabletsTouchHandler)
         {
-            _setSceneHander = setSceneHander;
+            _criteriaSettingHandler = criteriaSettingHandler;
             _tabletsTouchHandler = tabletsTouchHandler;
         }
 
-
         public void Initialize()
         {
-            _tabletsTouchHandler.OnTabletPressed += CheckTablet;
+            _tabletsTouchHandler.OnTabletPressed += CheckTabletForMatch;
         }
 
         public void Cleanup()
         {
-            _tabletsTouchHandler.OnTabletPressed -= CheckTablet;
+            _tabletsTouchHandler.OnTabletPressed -= CheckTabletForMatch;
         }
 
-        private void CheckTablet(PointerEventData eventData)
+        private void CheckTabletForMatch(PointerEventData eventData)
         {
             var tabletObject = eventData.pointerCurrentRaycast.gameObject;
             var tabletName = tabletObject.name;
-            var tabletToFind = _setSceneHander.RequiredTablet;
+            var tabletToFind = _criteriaSettingHandler.RequiredTablet;
             
             if (tabletToFind == tabletName)
             {
@@ -41,7 +40,7 @@ namespace TestProject
             }
             else
             {
-                OnCriteriaDismatch?.Invoke(tabletObject.transform);
+                OnCriteriaMismatch?.Invoke(tabletObject.transform);
             }
         }
     }

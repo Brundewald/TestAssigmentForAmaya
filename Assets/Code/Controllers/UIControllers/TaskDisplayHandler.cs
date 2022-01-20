@@ -5,7 +5,7 @@ namespace TestProject
     public sealed class TaskDisplayHandler
     {
         private readonly string _text;
-        private TextMeshProUGUI _textField;
+        private readonly TextMeshProUGUI _textField;
 
         public TaskDisplayHandler(UIInitializeHandler uiInitializeHandler, GameData gameData)
         {
@@ -13,7 +13,7 @@ namespace TestProject
             _text = gameData.UIData.TaskText;
         }
 
-        internal void ShowTask(string tabletName)
+        public void ShowTask(string tabletName)
         {
             _textField.text = _text + tabletName;
         }
