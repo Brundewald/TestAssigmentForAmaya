@@ -1,6 +1,6 @@
 ﻿namespace TestProject
 {
-    public enum GameState
+    internal enum GameState
     {
         Play = 0,
         Win = 1,

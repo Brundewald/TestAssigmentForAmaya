@@ -3,21 +3,21 @@ using UnityEngine;
 
 namespace TestProject
 {
-    public sealed class TabletsOnScreenHandler
+    internal sealed class TabletsOnScreenHandler
     {
         private readonly TabletStackHandler _tabletStackHandler;
         private readonly List<GameObject> _tabletsOnScreen;
         private Stack<GameObject> _tablets;
         
-        public List<GameObject> TabletsOnScreen => _tabletsOnScreen;
+        internal List<GameObject> TabletsOnScreen => _tabletsOnScreen;
 
-        public TabletsOnScreenHandler(TabletStackHandler tabletStackHandler)
+        internal TabletsOnScreenHandler(TabletStackHandler tabletStackHandler)
         {
             _tabletStackHandler = tabletStackHandler;
             _tabletsOnScreen = new List<GameObject>();
         }
 
-        public void PlaceTablets(int availableTablets)
+        internal void PlaceTablets(int availableTablets)
         {
             _tablets = _tabletStackHandler.TabletsStack;
             _tabletsOnScreen.Clear();

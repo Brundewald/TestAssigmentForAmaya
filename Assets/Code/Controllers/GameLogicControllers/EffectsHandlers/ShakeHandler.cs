@@ -5,7 +5,7 @@ namespace TestProject
 {
     internal sealed class ShakeHandler
     {
-        private TweenerData _tweenerData;
+        private readonly TweenerData _tweenerData;
         
         internal ShakeHandler(GameData gameData)
         {

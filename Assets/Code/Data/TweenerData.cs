@@ -3,7 +3,7 @@
 namespace TestProject
 {
     [CreateAssetMenu(menuName = "Data/TweenerData", fileName = "TweenerData")]
-    public class TweenerData: ScriptableObject
+    internal class TweenerData: ScriptableObject
     {
         [SerializeField] private float _fadeTweenDuration;
         [SerializeField] private float _fadeToMin;
@@ -13,14 +13,14 @@ namespace TestProject
         [SerializeField] private Vector3 _wrongAnswerShakeDirection;
         [SerializeField] private Vector3 _rightAnswerShakeDirection;
 
-        public float FadeDuration => _fadeTweenDuration;
-        public float FadeToMin => _fadeToMin;
-        public float FadeToMax => _fadeToMax;
+        internal float FadeDuration => _fadeTweenDuration;
+        internal float FadeToMin => _fadeToMin;
+        internal float FadeToMax => _fadeToMax;
 
-        public float ShakeDuration => _shakeDuration;
-        public float ShakeStrength => _shakeStrength;
-        public Vector3 WrongAnswerShakeDirection => _wrongAnswerShakeDirection;
-        public Vector3 RightAnswerShakeDirection => _rightAnswerShakeDirection;
+        internal float ShakeDuration => _shakeDuration;
+        internal float ShakeStrength => _shakeStrength;
+        internal Vector3 WrongAnswerShakeDirection => _wrongAnswerShakeDirection;
+        internal Vector3 RightAnswerShakeDirection => _rightAnswerShakeDirection;
 
     }
 }

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace TestProject
 {
-    public sealed class TweenAnimationHandler
+    internal sealed class TweenAnimationHandler
     {
         private readonly FadeInFadeOutHandler _fadeInFadeOutHandler;
         private readonly ShakeHandler _shakeHandler;
@@ -12,7 +12,7 @@ namespace TestProject
         private readonly CanvasGroup _textFieldCanvasGroup;
         private readonly GameObject _tabletHolder;
         
-        public TweenAnimationHandler(GameData gameData, UIInitializeHandler uiInitializeHandler)
+        internal TweenAnimationHandler(GameData gameData, UIInitializeHandler uiInitializeHandler)
         {
             _fadeInFadeOutHandler = new FadeInFadeOutHandler(gameData);
             _shakeHandler = new ShakeHandler(gameData);

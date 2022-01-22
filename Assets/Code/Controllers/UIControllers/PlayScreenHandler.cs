@@ -11,7 +11,7 @@ namespace TestProject
         private readonly GameObject _tabletHolder;
         private readonly Button _resetButton;
 
-        public PlayScreenHandler(UIInitializeHandler uiInitializeHandler, PlayStateHandler playStateHandler)
+        internal PlayScreenHandler(UIInitializeHandler uiInitializeHandler, PlayStateHandler playStateHandler)
         {
             _resetButton = uiInitializeHandler.GameScreenView.ResetButton;
             _tabletHolder = uiInitializeHandler.GameScreenView.TabletHolder;

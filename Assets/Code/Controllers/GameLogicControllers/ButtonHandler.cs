@@ -1,14 +1,13 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine.UI;
 
 namespace TestProject
 {
-    public sealed class ButtonHandler: IInitialization, ICleanup
+    internal sealed class ButtonHandler: IInitialization, ICleanup
     {
         private readonly GameStateHandler _gameStateHandler;
         private readonly Button _resetButton;
 
-        public ButtonHandler(UIInitializeHandler uiInitializeHandler, GameStateHandler gameStateHandler)
+        internal ButtonHandler(UIInitializeHandler uiInitializeHandler, GameStateHandler gameStateHandler)
         {
             _gameStateHandler = gameStateHandler;
             _resetButton = uiInitializeHandler.GameScreenView.ResetButton;

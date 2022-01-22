@@ -2,14 +2,14 @@
 
 namespace TestProject
 {
-    public sealed class ControllersProxy: IInitialization, IExecute, IFixedExecute, ICleanup
+    internal sealed class ControllersProxy: IInitialization, IExecute, IFixedExecute, ICleanup
     {
         private readonly List<IInitialization> _initializationControllers;
         private readonly List<IExecute> _executeControllers;
         private readonly List<IFixedExecute> _fixedExecuteControllers;
         private readonly List<ICleanup> _cleanupControllers;
 
-        public ControllersProxy()
+        internal ControllersProxy()
         {
             _initializationControllers = new List<IInitialization>();
             _executeControllers = new List<IExecute>();
@@ -17,7 +17,7 @@ namespace TestProject
             _cleanupControllers = new List<ICleanup>();
         }
 
-        public void Add(IController controller)
+        internal void Add(IController controller)
         {
             if (controller is IInitialization initializationController)
             {

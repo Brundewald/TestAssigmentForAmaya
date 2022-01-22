@@ -4,15 +4,15 @@ using UnityEngine;
 
 namespace TestProject
 {
-    public sealed class CriteriaCheckEventHandler: IInitialization, ICleanup
+    internal sealed class CriteriaCheckEventHandler: IInitialization, ICleanup
     {
         private readonly CriteriaCheckHandler _criteriaCheckHandler;
         private readonly TweenAnimationHandler _tweenAnimationHandler;
         private readonly ParticleIntializer _particleSystem;
 
-        public event Action OnRightAnswer;
+        internal event Action OnRightAnswer;
         
-        public CriteriaCheckEventHandler(CriteriaCheckHandler criteriaCheckHandler,
+        internal CriteriaCheckEventHandler(CriteriaCheckHandler criteriaCheckHandler,
             TweenAnimationHandler tweenAnimationHandler, ParticleIntializer particleIntializer)
         {
             _criteriaCheckHandler = criteriaCheckHandler;

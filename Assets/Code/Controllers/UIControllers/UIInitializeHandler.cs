@@ -2,13 +2,13 @@
 
 namespace TestProject
 {
-    public sealed class UIInitializeHandler
+    internal sealed class UIInitializeHandler
     {
         private readonly GameObject _gameScreenPrefab;
         private GameScreenView _gameScreenView;
 
-        public GameScreenView GameScreenView => _gameScreenView;
-        public UIInitializeHandler(GameData gameData)
+        internal GameScreenView GameScreenView => _gameScreenView;
+        internal UIInitializeHandler(GameData gameData)
         {
             _gameScreenPrefab = gameData.UIData.GameScreenPrefab;
             GetUI();

@@ -5,7 +5,7 @@ using UnityEngine.U2D;
 namespace TestProject
 {
     [CreateAssetMenu(menuName = "Data/TaskData", fileName = "TaskData")]
-    public sealed class TaskData : ScriptableObject
+    internal sealed class TaskData : ScriptableObject
     {
         [SerializeField] private int _easyLevelStackCount;
         [SerializeField] private int _mediumLevelStackCount;
@@ -16,13 +16,13 @@ namespace TestProject
         [SerializeField] private GameObject _tabletPrefab;
         [SerializeField] private GameObject _particleSystem;
 
-        public int EasyLevelStackCount => _easyLevelStackCount;
-        public int MediumLevelStackCount => _mediumLevelStackCount;
-        public int HardLevelStackCount => _hardLevelStackCount;
-        public int ObjectQuantity => _objectQuantity;
-        public SpriteAtlas ObjectSprites => _objectSprites;
-        public List<string> ObjectNames => _objectsNames;
+        internal int EasyLevelStackCount => _easyLevelStackCount;
+        internal int MediumLevelStackCount => _mediumLevelStackCount;
+        internal int HardLevelStackCount => _hardLevelStackCount;
+        internal int ObjectQuantity => _objectQuantity;
+        internal SpriteAtlas ObjectSprites => _objectSprites;
+        internal List<string> ObjectNames => _objectsNames;
         public GameObject TabletPrefab => _tabletPrefab;
-        public GameObject ParticleSystem => _particleSystem;
+        internal GameObject ParticleSystem => _particleSystem;
     }   
 }

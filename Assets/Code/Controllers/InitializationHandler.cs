@@ -1,8 +1,8 @@
 ﻿namespace TestProject
 {
-    public sealed class InitializationHandler
+    internal sealed class InitializationHandler
     {
-        public InitializationHandler(ControllersProxy controllers, GameData gameData)
+        internal InitializationHandler(ControllersProxy controllers, GameData gameData)
         {
             var uiInitializeHandler = new UIInitializeHandler(gameData);
             var tweenAnimationHandler = new TweenAnimationHandler(gameData, uiInitializeHandler);

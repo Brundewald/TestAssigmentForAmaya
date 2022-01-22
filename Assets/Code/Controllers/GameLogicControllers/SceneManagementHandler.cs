@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace TestProject
 {
-    public sealed class SceneManagementHandler
+    internal sealed class SceneManagementHandler
     {
         private const float InsertDelayForAppear = 0;
         
@@ -15,7 +15,7 @@ namespace TestProject
         private readonly TaskData _taskData;
         private List<GameObject> _activeTablets;
 
-        public SceneManagementHandler(TabletStackHandler tabletStackHandler,TabletsOnScreenHandler tabletsOnScreenHandler, 
+        internal SceneManagementHandler(TabletStackHandler tabletStackHandler,TabletsOnScreenHandler tabletsOnScreenHandler, 
             CriteriaSettingHandler criteriaSettingHandler, TweenAnimationHandler tweenAnimationHandler, GameData gameData)
         {
             _tabletStackHandler = tabletStackHandler;
@@ -25,7 +25,7 @@ namespace TestProject
             _taskData = gameData.TaskData;
         }
         
-        public void SetupScene(int levelStackCount)
+        internal void SetupScene(int levelStackCount)
         {
             _activeTablets = _tabletsOnScreenHandler.TabletsOnScreen;
             _tabletStackHandler.ReloadStack(levelStackCount, _activeTablets);

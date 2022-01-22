@@ -3,13 +3,13 @@ using UnityEngine.U2D;
 
 namespace TestProject
 {
-    public sealed class DataInterpretationHandler
+    internal sealed class DataInterpretationHandler
     {
         private readonly int _objectsQuantity;
         private TabletDataStruct[] _tabletsDataStructs;
 
-        public TabletDataStruct[] TabletsDataStructs => _tabletsDataStructs;
-        public DataInterpretationHandler(GameData gameData)
+        internal TabletDataStruct[] TabletsDataStructs => _tabletsDataStructs;
+        internal DataInterpretationHandler(GameData gameData)
         {
             _objectsQuantity = gameData.TaskData.ObjectQuantity;
             

@@ -2,7 +2,7 @@
 
 namespace TestProject
 {
-    public sealed class EnterPointView : MonoBehaviour
+    internal sealed class EnterPointView : MonoBehaviour
     {
         [SerializeField] private GameData _gameData;
         private ControllersProxy _controllers;

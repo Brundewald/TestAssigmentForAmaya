@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 namespace TestProject
 {
-    public sealed class TabletStackHandler
+    internal sealed class TabletStackHandler
     {
         private DataInterpretationHandler _dataInterpretationHandler;
         private TabletBuilder _tabletBuilder;
@@ -14,12 +14,12 @@ namespace TestProject
         private Stack<GameObject> _tabletsStack;
         private List<TabletView> _tabletsView;
 
-        public event Action OnStackReload;
+        internal event Action OnStackReload;
 
-        public Stack<GameObject> TabletsStack => _tabletsStack;
-        public List<TabletView> TabletsView => _tabletsView;
+        internal Stack<GameObject> TabletsStack => _tabletsStack;
+        internal List<TabletView> TabletsView => _tabletsView;
 
-        public TabletStackHandler(GameData gameData, UIInitializeHandler uiInitializeHandler)
+        internal TabletStackHandler(GameData gameData, UIInitializeHandler uiInitializeHandler)
         {
             _dataInterpretationHandler = new DataInterpretationHandler(gameData);
             _tabletBuilder = new TabletBuilder(gameData, uiInitializeHandler);

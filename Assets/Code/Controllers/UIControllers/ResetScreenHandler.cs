@@ -4,14 +4,14 @@ using UnityEngine.UI;
 
 namespace TestProject
 {
-    public class ResetScreenHandler
+    internal class ResetScreenHandler
     {
         private readonly GameObject _tabletHolder;
         private readonly Button _resetButton;
         private readonly TextMeshProUGUI _textField;
         private readonly string _text;
 
-        public ResetScreenHandler(GameData gameData, UIInitializeHandler uiInitializeHandler)
+        internal ResetScreenHandler(GameData gameData, UIInitializeHandler uiInitializeHandler)
         {
             _tabletHolder = uiInitializeHandler.GameScreenView.TabletHolder;
             _resetButton = uiInitializeHandler.GameScreenView.ResetButton;

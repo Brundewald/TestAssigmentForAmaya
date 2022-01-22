@@ -4,7 +4,7 @@ using UnityEngine;
 namespace TestProject
 {
     [CreateAssetMenu(menuName = "Data/GameData", fileName = "GameData")]
-    public sealed class GameData: ScriptableObject
+    internal sealed class GameData: ScriptableObject
     {
         private const string GameDataFolder = "Data/";
         private TaskData _taskData;
@@ -15,7 +15,7 @@ namespace TestProject
         [SerializeField] private string _uiDataPath;
         [SerializeField] private string _tweenerDataPath;
 
-        public TaskData TaskData
+        internal TaskData TaskData
         {
             get 
             {
@@ -25,7 +25,7 @@ namespace TestProject
             }
         }
 
-        public UIData UIData
+        internal UIData UIData
         {
             get
             {
@@ -35,7 +35,7 @@ namespace TestProject
             }
         }
 
-        public TweenerData TweenerData
+        internal TweenerData TweenerData
         {
             get
             {

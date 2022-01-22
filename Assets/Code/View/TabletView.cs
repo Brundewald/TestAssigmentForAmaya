@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 namespace TestProject
 {
-    public class TabletView: MonoBehaviour, IPointerClickHandler
+    internal class TabletView: MonoBehaviour, IPointerClickHandler
     {
         [SerializeField] private Image _tabletBackhround;
         [SerializeField] private Image _tabletImage;
 
-        public event Action<PointerEventData> OnTabletPressed;
-        public Image TabletBackground => _tabletBackhround;
-        public Image TabletImage => _tabletImage;
+        internal event Action<PointerEventData> OnTabletPressed;
+        internal Image TabletBackground => _tabletBackhround;
+        internal Image TabletImage => _tabletImage;
         
         public void OnPointerClick(PointerEventData eventData)
         {

@@ -3,13 +3,13 @@ using UnityEngine.UI;
 
 namespace TestProject
 {
-    public sealed class ReloadScreenHandler
+    internal sealed class ReloadScreenHandler
     {
         private readonly TweenAnimationHandler _tweenAnimationHandler;
         private readonly GameStateHandler _gameStateHandler;
         private readonly Button _resetButton;
         
-        public ReloadScreenHandler(TweenAnimationHandler tweenAnimationHandler, UIInitializeHandler uiInitializeHandler, GameStateHandler gameStateHandler)
+        internal ReloadScreenHandler(TweenAnimationHandler tweenAnimationHandler, UIInitializeHandler uiInitializeHandler, GameStateHandler gameStateHandler)
         {
             _tweenAnimationHandler = tweenAnimationHandler;
             _gameStateHandler = gameStateHandler;

@@ -2,14 +2,14 @@
 
 namespace TestProject
 {
-    public sealed class ParticleIntializer
+    internal sealed class ParticleIntializer
     {
         private readonly GameObject _particleSystemPrefab;
         private readonly GameObject _gameScreen;
         private ParticleSystem _particleSystem;
         private GameObject _particleSystemGameObject;
 
-        public ParticleIntializer(GameData gameData, UIInitializeHandler uiInitializeHandler)
+        internal ParticleIntializer(GameData gameData, UIInitializeHandler uiInitializeHandler)
         {
             _particleSystemPrefab = gameData.TaskData.ParticleSystem;
             _gameScreen = uiInitializeHandler.GameScreenView.gameObject;

@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace TestProject
 {
-    public sealed class GameScreenView: MonoBehaviour
+    internal sealed class GameScreenView: MonoBehaviour
     {
         [SerializeField] private Button _resetButton;
         [SerializeField] private TextMeshProUGUI _taskTextField;
@@ -14,12 +14,12 @@ namespace TestProject
         [SerializeField] private CanvasGroup _tabletHolderCanvasGroup;
         [SerializeField] private CanvasGroup _textFieldCanvasGroup;
         
-        public Button ResetButton => _resetButton;
-        public TextMeshProUGUI TaskTextField => _taskTextField;
-        public GameObject TabletHolder => _tabletHolder;
-        public Transform[] TabletPositons => _tabletPositions;
-        public CanvasGroup GameScreenCanvasGroup => _gameScreenCanvasGroup;
-        public CanvasGroup TabletHolderCanvasGroup => _tabletHolderCanvasGroup;
-        public CanvasGroup TextFieldCanvasGroup => _textFieldCanvasGroup;
+        internal Button ResetButton => _resetButton;
+        internal TextMeshProUGUI TaskTextField => _taskTextField;
+        internal GameObject TabletHolder => _tabletHolder;
+        internal Transform[] TabletPositons => _tabletPositions;
+        internal CanvasGroup GameScreenCanvasGroup => _gameScreenCanvasGroup;
+        internal CanvasGroup TabletHolderCanvasGroup => _tabletHolderCanvasGroup;
+        internal CanvasGroup TextFieldCanvasGroup => _textFieldCanvasGroup;
     }
 }

@@ -4,15 +4,15 @@ using UnityEngine.EventSystems;
 
 namespace TestProject
 {
-    public sealed class CriteriaCheckHandler: IInitialization, ICleanup
+    internal sealed class CriteriaCheckHandler: IInitialization, ICleanup
     {
         private readonly CriteriaSettingHandler _criteriaSettingHandler;
         private readonly TabletsTouchHandler _tabletsTouchHandler;
 
-        public event Action<Transform> OnCriteriaMatch;
-        public event Action<Transform> OnCriteriaMismatch;
+        internal event Action<Transform> OnCriteriaMatch;
+        internal event Action<Transform> OnCriteriaMismatch;
         
-        public CriteriaCheckHandler(CriteriaSettingHandler criteriaSettingHandler, TabletsTouchHandler tabletsTouchHandler)
+        internal CriteriaCheckHandler(CriteriaSettingHandler criteriaSettingHandler, TabletsTouchHandler tabletsTouchHandler)
         {
             _criteriaSettingHandler = criteriaSettingHandler;
             _tabletsTouchHandler = tabletsTouchHandler;

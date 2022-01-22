@@ -4,15 +4,15 @@ using UnityEngine.EventSystems;
 
 namespace TestProject
 {
-    public sealed class TabletsTouchHandler: IInitialization, ICleanup
+    internal sealed class TabletsTouchHandler: IInitialization, ICleanup
     {
         private readonly TabletStackHandler _tabletStackHandler;
         private readonly List<TabletView> _tabletView;
         private string _touchedTablet;
 
-        public event Action<PointerEventData> OnTabletPressed; 
+        internal event Action<PointerEventData> OnTabletPressed; 
         
-        public TabletsTouchHandler(TabletStackHandler tabletStackHandler)
+        internal TabletsTouchHandler(TabletStackHandler tabletStackHandler)
         {
             _tabletStackHandler = tabletStackHandler;
             _tabletView = tabletStackHandler.TabletsView;

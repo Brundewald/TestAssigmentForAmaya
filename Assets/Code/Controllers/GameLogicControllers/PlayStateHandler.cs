@@ -1,6 +1,6 @@
 ﻿namespace TestProject
 {
-    public sealed class PlayStateHandler: IInitialization, ICleanup
+    internal sealed class PlayStateHandler: IInitialization, ICleanup
     {
         private readonly GameStateHandler _gameStateHandler;
         private readonly TabletsTouchHandler _tabletsTouchHandler;
@@ -10,9 +10,9 @@
         private readonly ParticleIntializer _particleSystem;
         private readonly SetSceneHandler _setSceneHandler;
 
-        public SetSceneHandler SetSceneHandler => _setSceneHandler;
+        internal SetSceneHandler SetSceneHandler => _setSceneHandler;
 
-        public PlayStateHandler(UIInitializeHandler uiInitializeHandler, TweenAnimationHandler tweenAnimationHandler,
+        internal PlayStateHandler(UIInitializeHandler uiInitializeHandler, TweenAnimationHandler tweenAnimationHandler,
             GameStateHandler gameStateHandler, GameData gameData)
         {
             var taskDisplayHandler = new TaskDisplayHandler(uiInitializeHandler, gameData);

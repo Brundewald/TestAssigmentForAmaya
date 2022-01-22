@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace TestProject
 {
-    public sealed class CriteriaSettingHandler
+    internal sealed class CriteriaSettingHandler
     {
         private readonly TabletsOnScreenHandler _tabletsOnScreenHandler;
         private readonly TaskDisplayHandler _taskDisplayHandler;
@@ -11,9 +11,9 @@ namespace TestProject
         private List<GameObject> _tabletsOnScreen;
         private string _requiredTablet;
 
-        public string RequiredTablet => _requiredTablet;
+        internal string RequiredTablet => _requiredTablet;
 
-        public CriteriaSettingHandler(TabletsOnScreenHandler tabletsOnScreenHandler, TaskDisplayHandler taskDisplayHandler)
+        internal CriteriaSettingHandler(TabletsOnScreenHandler tabletsOnScreenHandler, TaskDisplayHandler taskDisplayHandler)
         {
             _tabletsOnScreenHandler = tabletsOnScreenHandler;
             _taskDisplayHandler = taskDisplayHandler;
@@ -21,7 +21,7 @@ namespace TestProject
             _previousTablets = new List<string>();
         }
 
-        public void SetCriteria()
+        internal void SetCriteria()
         {
             _tabletsOnScreen = _tabletsOnScreenHandler.TabletsOnScreen;
             var randomNumber = Random.Range(0, _tabletsOnScreen.Count);

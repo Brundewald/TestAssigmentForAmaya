@@ -2,7 +2,7 @@
 
 namespace TestProject
 {
-    public struct TabletDataStruct
+    internal struct TabletDataStruct
     {
         private string _tabletName;
         private Sprite _tabletSprite;

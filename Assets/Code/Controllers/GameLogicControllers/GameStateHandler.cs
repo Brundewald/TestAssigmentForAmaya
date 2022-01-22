@@ -1,13 +1,13 @@
 ﻿namespace TestProject
 {
-    public sealed class GameStateHandler: IInitialization, ICleanup
+    internal sealed class GameStateHandler: IInitialization, ICleanup
     {
         private readonly PlayStateHandler _playStateHandler;
         private readonly PlayScreenHandler _playScreenHandler;
         private readonly ResetScreenHandler _resetScreenHandler;
         private readonly ReloadScreenHandler _reloadScreenHandler;
 
-        public GameStateHandler(GameData gameData, UIInitializeHandler uiInitializeHandler,
+        internal GameStateHandler(GameData gameData, UIInitializeHandler uiInitializeHandler,
             TweenAnimationHandler tweenAnimationHandler)
         {
             _playStateHandler = new PlayStateHandler(uiInitializeHandler, tweenAnimationHandler, this, gameData);

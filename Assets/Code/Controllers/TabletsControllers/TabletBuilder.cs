@@ -2,15 +2,15 @@
 
 namespace TestProject
 {
-    public sealed class TabletBuilder
+    internal sealed class TabletBuilder
     {
         private readonly GameObject _tabletPrefab;
         private readonly Transform[] _tabletsPositions;
         private TabletView _tabletView;
 
-        public TabletView TabletView => _tabletView;
+        internal TabletView TabletView => _tabletView;
         
-        public TabletBuilder(GameData gameData, UIInitializeHandler uiInitializeHandler)
+        internal TabletBuilder(GameData gameData, UIInitializeHandler uiInitializeHandler)
         {
             _tabletPrefab = gameData.TaskData.TabletPrefab;
             _tabletsPositions = uiInitializeHandler.GameScreenView.TabletPositons;
